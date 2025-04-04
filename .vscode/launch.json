@@ -1,0 +1,14 @@
+{
+    "configurations": [
+        {
+            "type": "java",
+            "name": "Spring Boot-Hack4jobApplication<hack4job>",
+            "request": "launch",
+            "cwd": "${workspaceFolder}",
+            "mainClass": "com.metlife.hack4job.Hack4jobApplication",
+            "projectName": "hack4job",
+            "args": "",
+            "envFile": "${workspaceFolder}/.env"
+        }
+    ]
+}

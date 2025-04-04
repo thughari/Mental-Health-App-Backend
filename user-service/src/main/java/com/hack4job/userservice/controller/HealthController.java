@@ -41,7 +41,7 @@ public class HealthController {
 	public ResponseEntity<?> getHealthData(HttpServletRequest request) {
 		log.info("inside health cntroller");
 		HealthData healthData = healthService.getHealthData(request);
-		log.info(healthData.toString());
+		log.info(healthData!=null?healthData.toString():"no health data present");
 		return ResponseEntity.status(HttpStatus.SC_OK).body(healthData);
 	}
 	

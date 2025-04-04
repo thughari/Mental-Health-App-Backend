@@ -9,7 +9,7 @@
 		<relativePath/> <!-- lookup parent from repository -->
 	</parent>
 	<groupId>com.metlife</groupId>
-	<artifactId>hack4job</artifactId>
+	<artifactId>chat-service</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
 	<name>chat-service</name>
 	<description>Spring boor project for Mental Health aplication</description>

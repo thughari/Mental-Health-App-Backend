@@ -62,6 +62,7 @@ public class ChatService {
 				+ LocalDateTime.now().toString()
 				+ ". If you are asking any info say lieke it would be confidential and will be among us. "
 				+ "If asked about anything else, respond with: 'I am unable to help with that concern.' "
+				+ "If the user wishes(like hi or hay or hello like) you wish back in a good way! "
 				+ "Keep responses very short and effective. Keep it under 3 lines. "
 				+ (userHealth.isPresent() ? "providing the health details " + userHealth.get().toString():"")
 				+ " Here is the chat history:\n"
