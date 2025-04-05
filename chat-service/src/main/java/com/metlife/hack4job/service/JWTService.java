@@ -4,7 +4,7 @@ import io.jsonwebtoken.Claims;
 import io.jsonwebtoken.Jwts;
 import io.jsonwebtoken.io.Decoders;
 import io.jsonwebtoken.security.Keys;
-import org.springframework.security.core.userdetails.UserDetails;
+// import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.stereotype.Service;
 
 import javax.crypto.SecretKey;
@@ -70,10 +70,10 @@ public class JWTService {
                 .getPayload();
     }
 
-    public boolean validateToken(String token, UserDetails userDetails) {
-        final String userName = extractUserName(token);
-        return (userName.equals(userDetails.getUsername()) && !isTokenExpired(token) && !isTokenRevoked(token));
-    }
+    // public boolean validateToken(String token, UserDetails userDetails) {
+    //     final String userName = extractUserName(token);
+    //     return (userName.equals(userDetails.getUsername()) && !isTokenExpired(token) && !isTokenRevoked(token));
+    // }
 
     private boolean isTokenExpired(String token) {
         return extractExpiration(token).before(new Date());
