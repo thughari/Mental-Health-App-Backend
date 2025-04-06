@@ -1,6 +1,7 @@
 package com.metlife.hack4job.service;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.http.HttpHeaders;
 import org.springframework.stereotype.Service;
 import org.springframework.web.reactive.function.client.WebClient;
@@ -36,10 +37,14 @@ public class ChatService {
 	@Autowired
 	private JWTService jwtService;
 
+	@Value("${OLLAMA_BASE_URL:http://localhost:11434}")
+private String ollamaBaseUrl;
+
+
 	private final WebClient webClient;
 
 	public ChatService() {
-		this.webClient = WebClient.builder().baseUrl("http://127.0.0.1:11434").build();
+		this.webClient = WebClient.builder().baseUrl(ollamaBaseUrl).build();
 	}
 
 	public Flux<String> getAIResponseStream(Message userMessage, HttpServletRequest request) {
