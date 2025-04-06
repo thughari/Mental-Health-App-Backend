@@ -14,6 +14,7 @@ import com.metlife.hack4job.model.Message;
 import com.metlife.hack4job.repository.ChatHistoryRepo;
 import com.metlife.hack4job.repository.HealthRepo;
 
+import jakarta.annotation.PostConstruct;
 import jakarta.servlet.http.HttpServletRequest;
 import lombok.extern.slf4j.Slf4j;
 import reactor.core.publisher.Flux;
@@ -40,11 +41,13 @@ public class ChatService {
 	@Value("${OLLAMA_BASE_URL:http://localhost:11434}")
 private String ollamaBaseUrl;
 
+	private WebClient webClient;
 
-	private final WebClient webClient;
-
-	public ChatService() {
-		this.webClient = WebClient.builder().baseUrl(ollamaBaseUrl).build();
+	@PostConstruct
+	public void initWebClient() {
+		this.webClient = WebClient.builder()
+			.baseUrl(ollamaBaseUrl)
+			.build();
 	}
 
 	public Flux<String> getAIResponseStream(Message userMessage, HttpServletRequest request) {
