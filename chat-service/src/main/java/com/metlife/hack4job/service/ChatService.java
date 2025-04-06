@@ -39,7 +39,7 @@ public class ChatService {
 	private final WebClient webClient;
 
 	public ChatService() {
-		this.webClient = WebClient.builder().baseUrl("http://ollama:11434").build();
+		this.webClient = WebClient.builder().baseUrl("http://localhost:11434").build();
 	}
 
 	public Flux<String> getAIResponseStream(Message userMessage, HttpServletRequest request) {
